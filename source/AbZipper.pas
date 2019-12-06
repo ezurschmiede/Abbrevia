@@ -415,21 +415,21 @@ begin
 
         atTar : begin
           FArchive := TAbTarArchive.Create(FileName, fmOpenReadWrite or fmShareDenyNone);
-          inherited InitArchive;
+          {inherited }InitArchive; // EZ - fix StoreOptions not set to FArchive
         end;
 
         atGZip : begin
           FArchive := TAbGzipArchive.Create(FileName, fmOpenReadWrite or fmShareDenyNone);
           TAbGzipArchive(FArchive).TarAutoHandle := FTarAutoHandle;
           TAbGzipArchive(FArchive).IsGzippedTar := False;
-          inherited InitArchive;
+          {inherited }InitArchive; // EZ - fix StoreOptions not set to FArchive
         end;
 
         atGZippedTar : begin
           FArchive := TAbGzipArchive.Create(FileName, fmOpenReadWrite or fmShareDenyNone);
           TAbGzipArchive(FArchive).TarAutoHandle := FTarAutoHandle;
           TAbGzipArchive(FArchive).IsGzippedTar := True;
-          inherited InitArchive;
+          {inherited }InitArchive; // EZ - fix StoreOptions not set to FArchive
         end;
 
 {$IFNDEF NoBZip2}
@@ -437,14 +437,14 @@ begin
           FArchive := TAbBzip2Archive.Create(FileName, fmOpenReadWrite or fmShareDenyNone);
           TAbBzip2Archive(FArchive).TarAutoHandle := FTarAutoHandle;
           TAbBzip2Archive(FArchive).IsBzippedTar := False;
-          inherited InitArchive;
+          {inherited }InitArchive; // EZ - fix StoreOptions not set to FArchive
         end;
 
         atBzippedTar : begin
           FArchive := TAbBzip2Archive.Create(FileName, fmOpenReadWrite or fmShareDenyNone);
           TAbBzip2Archive(FArchive).TarAutoHandle := FTarAutoHandle;
           TAbBzip2Archive(FArchive).IsBzippedTar := True;
-          inherited InitArchive;
+          {inherited }InitArchive; // EZ - fix StoreOptions not set to FArchive
         end;
 {$ENDIF}
 
@@ -466,21 +466,21 @@ begin
 
         atTar : begin
           FArchive := TAbTarArchive.Create(FileName, fmCreate or fmShareDenyNone);
-          inherited InitArchive;
+          {inherited }InitArchive; // EZ - fix StoreOptions not set to FArchive
         end;
 
         atGZip : begin
           FArchive := TAbGzipArchive.Create(FileName, fmCreate or fmShareDenyNone);
           TAbGzipArchive(FArchive).TarAutoHandle := FTarAutoHandle;
           TAbGzipArchive(FArchive).IsGzippedTar := False;
-          inherited InitArchive;
+          {inherited }InitArchive; // EZ - fix StoreOptions not set to FArchive
         end;
 
         atGZippedTar : begin
           FArchive := TAbGzipArchive.Create(FileName, fmCreate or fmShareDenyNone);
           TAbGzipArchive(FArchive).TarAutoHandle := FTarAutoHandle;
           TAbGzipArchive(FArchive).IsGzippedTar := True;
-          inherited InitArchive;
+          {inherited }InitArchive; // EZ - fix StoreOptions not set to FArchive
         end;
 
 {$IFNDEF NoBZip2}
@@ -488,14 +488,14 @@ begin
           FArchive := TAbBzip2Archive.Create(FileName, fmCreate or fmShareDenyNone);
           TAbBzip2Archive(FArchive).TarAutoHandle := FTarAutoHandle;
           TAbBzip2Archive(FArchive).IsBzippedTar := False;
-          inherited InitArchive;
+          {inherited }InitArchive; // EZ - fix StoreOptions not set to FArchive
         end;
 
         atBzippedTar : begin
           FArchive := TAbBzip2Archive.Create(FileName, fmCreate or fmShareDenyNone);
           TAbBzip2Archive(FArchive).TarAutoHandle := FTarAutoHandle;
           TAbBzip2Archive(FArchive).IsBzippedTar := True;
-          inherited InitArchive;
+          {inherited }InitArchive; // EZ - fix StoreOptions not set to FArchive
         end;
 {$ENDIF}
 
